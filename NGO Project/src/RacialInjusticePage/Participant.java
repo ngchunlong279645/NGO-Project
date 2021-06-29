@@ -36,13 +36,23 @@ import javax.swing.JButton;
 public class Participant extends JFrame {
 
 	private JPanel contentPane;
+	private double total;
+	private JTextField textFieldParticipate;
+	private JTextField name;
+	private JTextField age;
+	private final ButtonGroup genderGroup = new ButtonGroup();
+	private JTextField email;
+	private JTextField contactNo;
+	private final ButtonGroup malaysian = new ButtonGroup();
+	private JTable table;
+	private JTextField donateAmount;
 
 	/**
 	 * Launch the application.
 	 */
 	public void setData() {
 		try {
-			File file = new File("D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Participant_RegistrationSystem.txt");
+			File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Participant_RegistrationSystem.txt
 			if(!file.exists()) {
 				file.createNewFile();
 				}
@@ -58,7 +68,6 @@ public class Participant extends JFrame {
 				}
 				bw.close();
 				fw.close();
-				
 			}
 			catch(Exception ex) {
 				ex.printStackTrace();
@@ -82,15 +91,6 @@ public class Participant extends JFrame {
 	 * Create the frame.
 	 */
 	public static String path;
-	private JTextField textFieldParticipate;
-	private JTextField name;
-	private JTextField age;
-	private final ButtonGroup genderGroup = new ButtonGroup();
-	private JTextField email;
-	private JTextField contactNo;
-	private final ButtonGroup malaysian = new ButtonGroup();
-	private JTable table;
-	private JTextField donateAmount;
 	
 	public void my_update(String str) { //method my_update to retrieve str
 		textFieldParticipate.setText(str);
@@ -98,9 +98,9 @@ public class Participant extends JFrame {
 	
 	public Participant() { //constructor with no argument
 		setTitle("RegistrationEvent");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); //Icon/SumWithUsicon.png
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100,1029, 664);
+		setBounds(100, 100,1184, 664);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -114,7 +114,7 @@ public class Participant extends JFrame {
 		
 		JLabel lblLogo = new JLabel(); //initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = "/Icon/SumWithUsiconFull.png"; //path to the image
+		path = ""; //path to the image  //Icon/SumWithUsiconFull.png
 		ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -130,6 +130,7 @@ public class Participant extends JFrame {
 				panel1.setOpaque(true);
 				Login login = new Login();
 				login.setVisible(true);
+				dispose();
 			}
 		});
 		panel1.setBackground(new Color(109,104,117)); //Old Lavender: 6D6875
@@ -161,6 +162,7 @@ public class Participant extends JFrame {
 				panel2.setOpaque(true);
 				SumWithUs s = new SumWithUs();
 				s.setVisible(true);
+				dispose();
 			}
 		});
 		panel2.setLayout(null);
@@ -189,6 +191,7 @@ public class Participant extends JFrame {
 				panel3.setOpaque(true);
 				Event e = new Event();
 				e.setVisible(true);
+				dispose();
 			}
 		});
 		panel3.setLayout(null);
@@ -222,19 +225,19 @@ public class Participant extends JFrame {
 		
 		JPanel panelRegister = new JPanel();
 		panelRegister.setBackground(new Color(255,180,162)); //Melon: FFB4A2
-		panelRegister.setBounds(180, 0, 835, 627);
+		panelRegister.setBounds(180, 0, 990, 627);
 		contentPane.add(panelRegister);
 		panelRegister.setLayout(null);
 		
 		JPanel panelRegistration = new JPanel();
-		panelRegistration.setBounds(165, 20, 513, 68);
+		panelRegistration.setBounds(240, 18, 513, 68);
 		panelRegistration.setBorder(new MatteBorder(5, 5, 5, 5, (Color) new Color(204, 102, 153)));
 		panelRegistration.setLayout(null);
 		panelRegistration.setBackground(new Color(255,180,162)); 
 		panelRegister.add(panelRegistration);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(399, 100, 426, 397);
+		scrollPane.setBounds(399, 100, 581, 397);
 		panelRegister.add(scrollPane);
 		
 		JPanel panelInfoTable = new JPanel();
@@ -242,21 +245,6 @@ public class Participant extends JFrame {
 		panelInfoTable.setBorder(new MatteBorder(5, 5, 5, 5, (Color) new Color(204, 102, 153)));
 		panelInfoTable.setBackground(new Color(238, 170, 153));
 		panelInfoTable.setLayout(null);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(4, 4, 415, 328);
-		panelInfoTable.add(scrollPane_1);
-		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null, null, null, null, null, null},
-			},
-			new String[] {
-				"EventType", "Name", "Age", "Gender", "Race", "State", "Malaysian", "Email", "Contact No", "Donate Amount"
-			}
-		));
-		scrollPane_1.setViewportView(table);
 		
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
@@ -268,8 +256,23 @@ public class Participant extends JFrame {
 		});
 		btnUpload.setForeground(new Color(204, 102, 153));
 		btnUpload.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnUpload.setBounds(159, 342, 111, 37);
+		btnUpload.setBounds(216, 342, 165, 37);
 		panelInfoTable.add(btnUpload);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(4, 4, 570, 328);
+		panelInfoTable.add(scrollPane_1);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"EventType", "Name", "Age", "Gender", "Race", "State", "Malaysian", "Email", "Donate Amount", "Contact No"
+			}
+		));
+		scrollPane_1.setViewportView(table);
 		
 		JLabel lblSumWithUs = new JLabel("REGISTRATION");
 		lblSumWithUs.setForeground(new Color(204, 102, 153));
@@ -410,8 +413,20 @@ public class Participant extends JFrame {
 		JButton btnDonation = new JButton("Donation");
 		btnDonation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				
+			    // iterate over all columns
+			    for (int i = 0 ; i < model.getRowCount()  ; i++) {
+			        // null or not Integer will throw exception
+			        String s = String.valueOf(model.getValueAt(i, 9));  //Search for the column Donation and collect the all the value
+			        total += Double.parseDouble(s); //Sum up the all the value in the column donation when add record finished add
+			    }
+				String result = String.valueOf(total);
 				Donation d = new Donation(); //obj created for class Advertisement() 
 				d.setVisible(true); // Open the Advertisement.java window
+				/*Finance f = new Finance();//obj created for Finance() 
+				f.addDonation(result); //pass the value of the total result of column Donation to the Finance.java window
+				f.setVisible(false); //The Finance.java window not view out bcs Finance windows only can view at Admin Interface*/
 				dispose(); // Close the Participant.java window	
 			}
 		});
@@ -423,12 +438,8 @@ public class Participant extends JFrame {
 		donateAmount = new JTextField();
 		donateAmount.setFont(new Font("Sitka Banner", Font.PLAIN, 20));
 		donateAmount.setColumns(10);
-		donateAmount.setBounds(240, 351, 129, 30);
+		donateAmount.setBounds(241, 351, 129, 30);
 		panelRegisterInfo.add(donateAmount);
-		
-		/*double totalEventFees = Double.parseDouble(donateAmount.getText()); //convert String to double
-	    String totalEventFeesTxt = Double.toString(totalEventFees);
-		totalEventFeeText.setText(totalEventFeesTxt);*/
 		
 		JLabel lblDonation = new JLabel("Donate Amount: RM");
 		lblDonation.setHorizontalAlignment(SwingConstants.LEFT);
@@ -476,7 +487,7 @@ public class Participant extends JFrame {
 		});
 		btnAddRecord.setForeground(new Color(204, 102, 153));
 		btnAddRecord.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnAddRecord.setBounds(413, 507, 157, 37);
+		btnAddRecord.setBounds(428, 514, 165, 37);
 		panelRegister.add(btnAddRecord);
 		
 		JButton btnUpdate = new JButton("Update");
@@ -519,7 +530,7 @@ public class Participant extends JFrame {
 		});
 		btnUpdate.setForeground(new Color(204, 102, 153));
 		btnUpdate.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnUpdate.setBounds(580, 507, 111, 37);
+		btnUpdate.setBounds(618, 514, 165, 37);
 		panelRegister.add(btnUpdate);
 		
 		JButton btnReset = new JButton("Reset");
@@ -539,7 +550,7 @@ public class Participant extends JFrame {
 		});
 		btnReset.setForeground(new Color(204, 102, 153));
 		btnReset.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnReset.setBounds(701, 507, 111, 37);
+		btnReset.setBounds(803, 514, 165, 37);
 		panelRegister.add(btnReset);
 		
 		JButton btnExit = new JButton("Exit");
@@ -552,7 +563,7 @@ public class Participant extends JFrame {
 		});
 		btnExit.setForeground(new Color(204, 102, 153));
 		btnExit.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnExit.setBounds(701, 554, 111, 37);
+		btnExit.setBounds(803, 564, 165, 37);
 		panelRegister.add(btnExit);
 		
 		JButton btnPrint = new JButton("Print");
@@ -568,7 +579,7 @@ public class Participant extends JFrame {
 		});
 		btnPrint.setForeground(new Color(204, 102, 153));
 		btnPrint.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnPrint.setBounds(580, 554, 111, 37);
+		btnPrint.setBounds(618, 564, 165, 37);
 		panelRegister.add(btnPrint);
 		
 		JButton btnDelete = new JButton("Delete");
@@ -590,7 +601,7 @@ public class Participant extends JFrame {
 		});
 		btnDelete.setForeground(new Color(204, 102, 153));
 		btnDelete.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		btnDelete.setBounds(413, 554, 157, 37);
+		btnDelete.setBounds(428, 564, 165, 37);
 		panelRegister.add(btnDelete);
 	}
 	

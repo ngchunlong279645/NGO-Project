@@ -32,9 +32,9 @@ public class SumWithUs extends JFrame {
 	 * Launch the application.
 	 */
 	
-	public static void TextFromFile(JTextPane txtpnHowToJoinLuckyDraw) {
+	public static void TextFromFile(JTextPane txtpnHowToJoinLuckyDraw) { //Read and import from AboutUs txtFile 
 		try {
-			String path = "D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AboutUs.txt";
+			String path = ""; //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AboutUs.txt
 			File file = new File(path);
 			FileReader fr = new FileReader(file);
 			while(fr.read() != -1) {
@@ -74,7 +74,7 @@ public class SumWithUs extends JFrame {
 		txtpnAbout.setForeground(Color.black);
 		
 		setTitle("Sum With Us");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); //Icon/SumWithUsicon.png
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029, 664);
 		contentPane = new JPanel();
@@ -90,7 +90,7 @@ public class SumWithUs extends JFrame {
 		
 		JLabel lblLogo = new JLabel();//initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = "/Icon/SumWithUsiconFull.png"; //path to the image
+		path = ""; //path to the image //Icon/SumWithUsiconFull.png
 	    ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -222,7 +222,7 @@ public class SumWithUs extends JFrame {
 		JLabel NGOprofile = new JLabel(); //initialization of JLabel 
 		NGOprofile.setBounds(36, 164, 320, 414);
 		panelSumWithUs.add(NGOprofile);
-		path = "/WITHOUT US, WITHOUT COUNTRY/SumWithUs.jpg"; //path to the image
+		path = ""; //path to the image  ///WITHOUT US, WITHOUT COUNTRY/SumWithUs.jpg
 		ImageIcon MyImage = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image img = MyImage.getImage(); //converting ImageIcon into Image
 		Image newImg = img.getScaledInstance(NGOprofile.getWidth(), NGOprofile.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image

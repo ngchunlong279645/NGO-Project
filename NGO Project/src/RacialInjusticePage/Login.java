@@ -27,16 +27,18 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 public class Login extends JFrame {
-
+	private javax.swing.JButton Minimize;
+	private javax.swing.JButton Close;
+	private JFrame frame;
 	private JPanel contentPane;
 	private JTextField UsernameTextField;
 	private JPasswordField passwordField;
-
+	
 	/**
 	 * Launch the application.
 	 */
     public boolean verifyUser() throws IOException{
-    	File f = new File("D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\UserPwdData.txt");
+    	File f = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\UserPwdData.txt
     	if(!f.exists()) {
     		f.createNewFile();
     	}
@@ -49,9 +51,6 @@ public class Login extends JFrame {
     		if(UsernameTextField.getText().equals(Row[1]) && passwordField.getText().equals(Row[2])) {
     			return true;
     		}
-    		/*else {
-    			return false;
-    		}*/
     	}
     	return false;
     }
@@ -68,12 +67,11 @@ public class Login extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
 	
-	public Login() { //constructor with no argument
+	public Login() { //constructor without argument
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1016, 628);
@@ -103,7 +101,7 @@ public class Login extends JFrame {
 		panelSumWithUs.add(lblNewLabel);
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(getClass().getResource("")));
+		lblLogo.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/SumWithUsiconFull.png
 		lblLogo.setBounds(60, 94, 320, 309);
 		panelSumWithUs.add(lblLogo);
 
@@ -180,7 +178,6 @@ public class Login extends JFrame {
 				if (loginOption.getSelectedItem().equals("User")) {
 						try {
 							if(verifyUser() == true) {
-								//if(UsernameTextField.getText().equals("User") && passwordField.getText().equals("123abcd")) 
 								JOptionPane.showMessageDialog(null, "Login Successful!");
 								SumWithUs s = new SumWithUs(); // obj created for class SumWithUs() 
 								s.setVisible(true); // Open the SumWithUs.java window after user log in successful
@@ -194,20 +191,18 @@ public class Login extends JFrame {
 				       }							
 				}
 				else if(loginOption.getSelectedItem().equals("Admin")) {
-					if(UsernameTextField.getText().equals("1") && passwordField.getText().equals("1") || UsernameTextField.getText().equals("Admin02") && passwordField.getText().equals("SvmWithVs")) {
+					if(UsernameTextField.getText().equals("Admin01") && passwordField.getText().equals("5umW17hUs") || UsernameTextField.getText().equals("Admin02") && passwordField.getText().equals("SvmWithVs")) {
 						JOptionPane.showMessageDialog(null, "Login Successful!");
-						
-						Finance f = new Finance(); //obj created for class Finance() 
-						f.setVisible(true);	// Open the Finance.java window after admin log in successful
-						setVisible(false); // Close the Login.java window					
-						
+						Admin a = new Admin(); //obj created for class Admin() 
+						a.setVisible(true);	// Open the Admin.java window after admin log in successful
+						setVisible(false); // Close the Login.java window	
 					}					
 					else 
 						JOptionPane.showMessageDialog(null, "Login Incorrect! \nPlease reset and re-enter again!");
 				}
 			}
 		});
-		btnLogin.setIcon(new ImageIcon(getClass().getResource("")));
+		btnLogin.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-user-24.png
 		btnLogin.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141))); //English Lavender: B5838D
 		btnLogin.setForeground(new Color(181,131,141));
 		btnLogin.setBackground(new Color(255,180,162)); //Melon: FFB4A2
@@ -224,12 +219,12 @@ public class Login extends JFrame {
 		JButton btnSignUp = new JButton("Sign Up");
 		btnSignUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						SignUp signUp = new SignUp();  //obj created for class SignUp() 
-						signUp.setVisible(true); // Open the SignUp.java window if the user is first time user
-						dispose(); // Close the Login.java window
+				SignUp signUp = new SignUp();  //obj created for class SignUp() 
+				signUp.setVisible(true); // Open the SignUp.java window if the user is first time user
+				dispose(); // Close the Login.java window
 			}
 		});
-		btnSignUp.setIcon(new ImageIcon(getClass().getResource("")));
+		btnSignUp.setIcon(new ImageIcon(getClass().getResource("")));//Icon/icons8-add-user-male-24.png
 		btnSignUp.setForeground(new Color(181, 131, 141));
 		btnSignUp.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnSignUp.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141)));
@@ -244,7 +239,7 @@ public class Login extends JFrame {
 				passwordField.setText("");
 			}
 		});
-		btnReset.setIcon(new ImageIcon(getClass().getResource("")));
+		btnReset.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-reset-24.png
 		btnReset.setForeground(new Color(181, 131, 141));
 		btnReset.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnReset.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141)));
@@ -255,12 +250,14 @@ public class Login extends JFrame {
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Advertisement ad = new Advertisement();//obj created for class Advertisement() 
-				ad.setVisible(true); // Open the Advertisement.java window
-				dispose();// Close the Login.java window
+				frame = new JFrame();
+				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "Sum With Us System", 
+					JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+					System.exit(0); //Exit the program
+				}
 			}
 		});
-		btnExit.setIcon(new ImageIcon(getClass().getResource("")));
+		btnExit.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-exit-24.png
 		btnExit.setForeground(new Color(181, 131, 141));
 		btnExit.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnExit.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141)));
@@ -269,13 +266,13 @@ public class Login extends JFrame {
 		panelLogin.add(btnExit);
 		
 		JButton Close = new JButton();
-		Close.setIcon(new ImageIcon(getClass().getResource("")));
+		Close.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-close-45.png
         Close.setToolTipText("Close");
         Close.setBorder(null);
         Close.setBorderPainted(false);
         Close.setContentAreaFilled(false);
         Close.setRequestFocusEnabled(false);
-        Close.setRolloverIcon(new ImageIcon(getClass().getResource("")));
+        Close.setRolloverIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-close-45 (2).png
         Close.setVerifyInputWhenFocusTarget(false);
         Close.setBounds(527, 10, 46, 40);
 		panelLogin.add(Close);
@@ -286,7 +283,7 @@ public class Login extends JFrame {
         });
 		 
         JButton Minimize = new JButton();
-        Minimize.setIcon(new ImageIcon(getClass().getResource("")));
+        Minimize.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-minimize-45 (1).png
         Minimize.setToolTipText("Minimize");
         Minimize.setBorder(null);
         Minimize.setRequestFocusEnabled(false);
@@ -294,7 +291,7 @@ public class Login extends JFrame {
         Minimize.setBorderPainted(false);
         Minimize.setFocusPainted(false);
         Minimize.setRequestFocusEnabled(false);
-        Minimize.setRolloverIcon(new ImageIcon(getClass().getResource("")));
+        Minimize.setRolloverIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-minimize-45.png
         Minimize.setVerifyInputWhenFocusTarget(false);
         Minimize.setBounds(469, 10, 46, 40);
         panelLogin.add(Minimize);
@@ -323,7 +320,4 @@ public class Login extends JFrame {
 	private void CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseActionPerformed
         this.dispose(); // Close the Login.java window
     }
-	
-	 private javax.swing.JButton Minimize;
-	 private javax.swing.JButton Close;
 }

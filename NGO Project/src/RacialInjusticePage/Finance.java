@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,6 +25,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.JTextField;
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;    
 
 public class Finance extends JFrame {
 	private JTable table;
@@ -30,6 +35,14 @@ public class Finance extends JFrame {
 	private JTextField adExpenses; // add this line to set it global
 	private JTextField extraExpenses; // add this line to set it global
 	private JTextField totalSponsor; // add this line to set it global
+	private JTextField totalDonation; //add this line to set it global
+	private JTextField totalEventFeeText;
+	private JTextField totalExpensesText;
+	private JTextField netProfitText;
+	private JTextField eventFees;
+	private JTextField totalNumParticipant;
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+	LocalDateTime now = LocalDateTime.now();  
 	/**
 	 * Launch the application.
 	 */
@@ -50,12 +63,6 @@ public class Finance extends JFrame {
 	 * Create the frame.
 	 */
 	public static String path;
-	private JTextField totalEventFeeText;
-	private JTextField totalDonation;
-	private JTextField totalExpensesText;
-	private JTextField netProfitText;
-	private JTextField eventFees;
-	private JTextField totalNumParticipant;
 	
 	public void admin_update(String adFeesTxt, String extraFeesTxt, String sponsorTxt) { //method admin_update to retrieve adFeesTxt,extraFeesTxt,sponsorTxt (constructor with 3 arguments)
 		adExpenses.setText(adFeesTxt);
@@ -63,9 +70,13 @@ public class Finance extends JFrame {
 		totalSponsor.setText(sponsorTxt);
 	}
 	
+	public void addDonation(String result) { //get value from other frame (Participant) //So the value of the totalDonation MUST User log in add their record only function it at Admin Interface! 
+		totalDonation.setText(result);
+	}
+	
 	public Finance() { //constructor with no argument
 		setTitle("Finance");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); //Icon/SumWithUsicon.png
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100,  1029, 664);
 		contentPane = new JPanel();
@@ -81,7 +92,7 @@ public class Finance extends JFrame {
 		
 		JLabel lblLogo = new JLabel(); //initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = ""; //path to the image
+		path = ""; //path to the image  //Icon/SumWithUsiconFull.png
 		ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -306,7 +317,7 @@ public class Finance extends JFrame {
 		panelFinance_1.add(totalNumParticipant);
 		
 		JButton btnReset = new JButton("Reset");
-		btnReset.setIcon(new ImageIcon(getClass().getResource("")));
+		btnReset.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-reset-45.png
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				adExpenses.setText("");
@@ -324,16 +335,38 @@ public class Finance extends JFrame {
 		btnReset.setBounds(55, 509, 153, 80);
 		panelFinancial.add(btnReset);
 		
-		JButton btnPrint = new JButton("Print");
-		btnPrint.setIcon(new ImageIcon(getClass().getResource("")));
+		JButton btnPrint = new JButton("Print"); //PrintStatement to FinanceReporttxtFile
+		btnPrint.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-print-45 (1).png
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					table.print();
-				} 
-				catch (java.awt.print.PrinterException arg0) {
-					System.err.format("No printer found", arg0.getMessage());
-				}
+				try { //export to FinanceReport txtFile
+					File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\FinanceReport.txt
+					if(!file.exists()) {
+						file.createNewFile();
+						}
+					FileWriter fw = new FileWriter(file.getAbsoluteFile());
+					BufferedWriter bw = new BufferedWriter(fw);
+						bw.write(" \t Finance Statement\n" 
+					           + "---------------------------------");
+						bw.write("\nTotal Sponsor   : RM "+ totalSponsor.getText());
+						bw.write("\nTotal Event Fees: RM "+ totalEventFeeText.getText());
+						bw.write("\nTotal Donation  : RM "+ totalDonation.getText());
+						bw.write("\nTotal Expenses  : RM "+ totalExpensesText.getText());
+						bw.write("\n=================================");
+						bw.write("\nTotal Net Profit: RM "+ netProfitText.getText());			
+						bw.write("\n=================================");
+						bw.write("\n\nNote: Event Fees          : RM "+ eventFees.getText()
+						        +"\n      Total Num Participant : "+ totalNumParticipant.getText() +" participant"
+						        +"\n      Advertisement Expenses: RM "+ adExpenses.getText()
+						        +"\n      Extra Expenses        : RM " + extraExpenses.getText()
+                                +"\n      Printed at "+dtf.format(now)); 
+						bw.close();
+						fw.close();
+						JOptionPane.showMessageDialog(null, "Finance Statement Exported in txtFile!");
+					}
+					catch(Exception ex) {
+						ex.printStackTrace();
+					}
 			}
 		});
 		btnPrint.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -434,7 +467,7 @@ public class Finance extends JFrame {
 			    netProfitText.setText(totalNetProfitTxt);
 			}
 		});
-		btnCalculateNetProfit.setIcon(new ImageIcon(""));
+		btnCalculateNetProfit.setIcon(new ImageIcon("")); //C:\\Users\\Win10Pro\\Downloads\\icons8-calculator-35.png
 		btnCalculateNetProfit.setForeground(new Color(204,102,153));
 		btnCalculateNetProfit.setFont(new Font("Sitka Banner", Font.BOLD, 25));
 		btnCalculateNetProfit.setBounds(10, 295, 171, 46);

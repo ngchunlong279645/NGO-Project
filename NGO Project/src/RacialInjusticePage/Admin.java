@@ -42,11 +42,17 @@ public class Admin extends JFrame {
 	private JTextField setSponsor;
 	private JTextField txt_filename;
 	private JLabel lblAdminProfile;
+	
+	private JTextField setEventName;
+	private JTextField setEventDate;
+	private JTextField setEventTime;
+	private JTextField setLocation;
+	private JTextField setEventFees;
 	/**
 	 * Launch the application.
 	 */
 	public void setData() {
-		File file = new File("D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\EvtInfo.txt");
+		File file = new File("");//D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\EvtInfo.txt
 		try {
 		if(!file.exists()) {
 			file.createNewFile();
@@ -74,8 +80,6 @@ public class Admin extends JFrame {
 		}
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -93,15 +97,10 @@ public class Admin extends JFrame {
 	 * Create the frame.
 	 */
 	public static String path;
-	private JTextField setEventName;
-	private JTextField setEventDate;
-	private JTextField setEventTime;
-	private JTextField setLocation;
-	private JTextField setEventFees;
 	
 	public Admin() {
 		setTitle("Admin");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));//Icon/SumWithUsicon.png
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029, 664);
 		contentPane = new JPanel();
@@ -117,7 +116,7 @@ public class Admin extends JFrame {
 		
 		JLabel lblLogo = new JLabel(); //initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = ""; //path to the image
+		path = ""; //path to the image //Icon/SumWithUsiconFull.png
 		ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -159,6 +158,16 @@ public class Admin extends JFrame {
 		panelMainMenu.add(panelHighlight2);
 		
 		JPanel panel2 = new JPanel();
+		panel2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				setColor(panel2);
+				panel2.setOpaque(true);
+				SumWithUs s = new SumWithUs();
+				s.setVisible(true);
+				dispose();
+			}
+		});
 		panel2.setLayout(null);
 		panel2.setBackground(new Color(109, 104, 117));
 		panel2.setBounds(11, 154, 171, 51);
@@ -290,9 +299,6 @@ public class Admin extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String adminEditAd= editAd.getText();//read the JTextField EventType data
-				Advertisement ad = new Advertisement(); //obj created for class Advertisement() 
-				//ad.admin_update(adminEditAd); // Execute the method admin_update to pass adminEdit
-				ad.setVisible(false);
 				JOptionPane.showMessageDialog(null, "Update Successfully");
 			}
 		});
@@ -302,8 +308,8 @@ public class Admin extends JFrame {
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					File file = new File("D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AboutUs.txt");
+				try { //export to AboutUs txtFile
+					File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AboutUs.txt
 					if(!file.exists()) {
 						file.createNewFile();
 						}
@@ -318,8 +324,8 @@ public class Admin extends JFrame {
 					catch(Exception ex) {
 						ex.printStackTrace();
 					}
-				try {
-					File file = new File("D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AdvertisementDescription.txt");
+				try { //export to AdvertisementDescription txtFile
+					File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AdvertisementDescription.txt
 					if(!file.exists()) {
 						file.createNewFile();
 						}
@@ -348,7 +354,7 @@ public class Admin extends JFrame {
 		JLabel lblEditAboutUs = new JLabel("Edit About Us");
 		lblEditAboutUs.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEditAboutUs.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblEditAboutUs.setBounds(22, 107, 265, 23);
+		lblEditAboutUs.setBounds(54, 113, 265, 17);
 		panelAdminSettings.add(lblEditAboutUs);
 		
 		JLabel lblEditEventDescription = new JLabel("Edit Event Description");
@@ -360,7 +366,7 @@ public class Admin extends JFrame {
 		JLabel lblEditFinance = new JLabel("Edit Finance");
 		lblEditFinance.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEditFinance.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		lblEditFinance.setBounds(487, 102, 265, 23);
+		lblEditFinance.setBounds(440, 110, 265, 23);
 		panelAdminSettings.add(lblEditFinance);
 		
 		JLabel lblSetAdExpenses = new JLabel("Set Ad Expenses    : RM");
@@ -547,12 +553,20 @@ public class Admin extends JFrame {
 		setSponsor.setColumns(10);
 		setSponsor.setBounds(617, 217, 140, 30);
 		panelAdminSettings.add(setSponsor);
+		
+		JLabel lblLabel = new JLabel("Please set value at above only can click below button to view finance!");
+		lblLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblLabel.setBounds(407, 253, 404, 17);
+		panelAdminSettings.add(lblLabel);
+		
+		JLabel lblAfterSettings = new JLabel("\u2190After update and upload, can click beside Menu panel to check the update info!");
+		lblAfterSettings.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblAfterSettings.setBounds(10, 87, 475, 23);
+		panelAdminSettings.add(lblAfterSettings);
 
 	}
 	
-	
-	
-	private void setColor(JPanel pane) {
+	private void setColor(JPanel pane) { //setColorMainMenuPanel
 		pane.setBackground(new Color(181,131,141)); //English Lavender: B5838D
 	}
 }

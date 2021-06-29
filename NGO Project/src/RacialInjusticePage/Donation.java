@@ -61,7 +61,7 @@ public class Donation extends JFrame {
 	
 	public Donation() {
 		setTitle("Donation");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); ///Icon/SumWithUsicon.png
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029,590);
 		contentPane = new JPanel();
@@ -140,13 +140,23 @@ public class Donation extends JFrame {
 		panelViewDonateMethod.setBackground(new Color(255, 180, 162));
 		panelViewDonateMethod.setBounds(517, 98, 488, 409);
 		panel.add(panelViewDonateMethod);
-
 		
 		JButton btnDonateMethod = new JButton("Select Donate Method:");
 		btnDonateMethod.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			if(donateMethodcomboBox.getSelectedItem().equals("Cash")) {
-				
+				JButton btnConfirm1 = new JButton("Confirm");
+				btnConfirm1.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						JOptionPane.showMessageDialog(null, "Donation Done Succesful!");
+						Advertisement ad = new Advertisement(); //obj created for Advertisement()
+						ad.setVisible(true); //Open the Advertisement.java window
+						dispose(); //Close Donation.java window
+					}
+				});
+				btnConfirm1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				btnConfirm1.setBounds(266, 230, 155, 36);
+				panelViewDonateMethod.add(btnConfirm1);
 			}
 			else if(donateMethodcomboBox.getSelectedItem().equals("Credit/Debit")) {
 				JLabel lblEnterCardType = new JLabel("Enter card Type:");
@@ -206,6 +216,19 @@ public class Donation extends JFrame {
 				ImageIcon image = new ImageIcon(newImg); //finally set the image to the JLabel
 				panelViewDonateMethod.add(lblCreditDebitCard);
 				lblCreditDebitCard.setIcon(image);	
+
+				JButton btnConfirm2 = new JButton("Confirm");
+				btnConfirm2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						JOptionPane.showMessageDialog(null, "Donation Done Succesful!");
+						Advertisement ad = new Advertisement(); //obj created for Advertisement()
+						ad.setVisible(true); //Open the Advertisement.java window
+						dispose(); //Close Donation.java window
+					}
+				});
+				btnConfirm2.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				btnConfirm2.setBounds(270, 338, 155, 36);
+				panelViewDonateMethod.add(btnConfirm2);
 			}
 			else if(donateMethodcomboBox.getSelectedItem().equals("Account")) {
 				JLabel lblHaveAnPaypal = new JLabel("Have an PayPal account? Sign in to give faster.");
@@ -219,6 +242,19 @@ public class Donation extends JFrame {
 				chckbxHvPayPalAcc.setBounds(20, 65, 110, 33);
 				panelViewDonateMethod.add(chckbxHvPayPalAcc);
 				chckbxHvPayPalAcc.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				
+				JButton btnConfirm3 = new JButton("Confirm");
+				btnConfirm3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						JOptionPane.showMessageDialog(null, "Donation Done Succesful!");
+						Advertisement ad = new Advertisement(); //obj created for Advertisement()
+						ad.setVisible(true); //Open the Advertisement.java window
+						dispose(); //Close Donation.java window
+					}
+				});
+				btnConfirm3.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				btnConfirm3.setBounds(266, 230, 155, 36);
+				panelViewDonateMethod.add(btnConfirm3);
 			}
 			else if (donateMethodcomboBox.getSelectedItem().equals("Online Banking")) {
 				JComboBox bankName = new JComboBox();
@@ -260,11 +296,14 @@ public class Donation extends JFrame {
 				panelViewDonateMethod.add(tacNo);
 				tacNo.setColumns(10);
 
-				JButton btnConfirm = new JButton("Confirm");
-				btnConfirm.addActionListener(new ActionListener() {
+				JButton btnConfirm4 = new JButton("Confirm");
+				btnConfirm4.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if (tacNo.getText().equals("520947")) {
 							JOptionPane.showMessageDialog(null, "Donation Done Succesful!");
+							Advertisement ad = new Advertisement(); //obj created for Advertisement()
+							ad.setVisible(true); //Open the Advertisement.java window
+							dispose(); //Close Donation.java window
 						}
 						else {
 							JOptionPane.showMessageDialog(null, "Incorrect!Please Request TacNo and Key In Again!");
@@ -272,9 +311,9 @@ public class Donation extends JFrame {
 						}
 					}
 				});
-				btnConfirm.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-				btnConfirm.setBounds(266, 230, 155, 36);
-				panelViewDonateMethod.add(btnConfirm);
+				btnConfirm4.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				btnConfirm4.setBounds(266, 230, 155, 36);
+				panelViewDonateMethod.add(btnConfirm4);
 				
 				JButton btnRequestTacno = new JButton("Request TacNo");
 				btnRequestTacno.addActionListener(new ActionListener() {
@@ -292,21 +331,11 @@ public class Donation extends JFrame {
 				btnRequestTacno.setBounds(21, 152, 155, 36);
 				panelViewDonateMethod.add(btnRequestTacno);
 			}
-				
 			}
 		});
 		btnDonateMethod.setBounds(20, 168, 239, 33);
 		btnDonateMethod.setForeground(new Color(204, 102, 153));
 		btnDonateMethod.setFont(new Font("Sitka Banner", Font.BOLD, 22));
 		panelDonation.add(btnDonateMethod);
-		
 	}
-	
-	/*public double getPayment() {  //2.5 Interface
-  		if(malaysian == true) {
-  			return super.eventFees + this.donationFee;
-  		}
-  		else 
-  			return super.eventFees + this.donationFee * 4.13;
-  	}*/
 }

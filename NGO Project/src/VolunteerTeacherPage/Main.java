@@ -91,7 +91,7 @@ public class Main extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Desktop	browser = Desktop.getDesktop();
 				try {
-					browser.browse(new URI(""));
+					browser.browse(new URI("https://www.youtube.com/user/sols247"));
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -101,7 +101,7 @@ public class Main extends JFrame {
 				}
 			}
 		});
-		button.setIcon(new ImageIcon(Main.class.getResource("")));
+		button.setIcon(new ImageIcon(Main.class.getResource("")));//IMAGE/youtube-icon.png//
 		button.setBackground(Color.WHITE);
 		button.setBounds(816, 239, 33, 37);
 		panel.add(button);
@@ -111,7 +111,7 @@ public class Main extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Desktop	browser = Desktop.getDesktop();
 				try {
-					browser.browse(new URI(""));
+					browser.browse(new URI("https://twitter.com/SOLS247"));
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -121,7 +121,7 @@ public class Main extends JFrame {
 				}
 			}
 		});
-		button_1.setIcon(new ImageIcon(Main.class.getResource("")));
+		button_1.setIcon(new ImageIcon(Main.class.getResource("")));//IMAGE/twitter-icon.png//
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(816, 200, 33, 28);
 		panel.add(button_1);
@@ -141,7 +141,7 @@ public class Main extends JFrame {
 				}
 			}
 		});
-		button_2.setIcon(new ImageIcon(Main.class.getResource("")));
+		button_2.setIcon(new ImageIcon(Main.class.getResource("")));//IMAGE/social-media-icon.png//
 		button_2.setBackground(Color.WHITE);
 		button_2.setBounds(816, 161, 33, 28);
 		panel.add(button_2);
@@ -161,7 +161,7 @@ public class Main extends JFrame {
 				}
 			}
 		});
-		button_3.setIcon(new ImageIcon(Main.class.getResource("")));
+		button_3.setIcon(new ImageIcon(Main.class.getResource("")));//IMAGE/facebook-icon.png//
 		button_3.setBounds(816, 122, 33, 28);
 		panel.add(button_3);
 		
@@ -179,7 +179,7 @@ public class Main extends JFrame {
 		panel.add(button_4);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Main.class.getResource("")));
+		label.setIcon(new ImageIcon(Main.class.getResource("")));//IMAGE/10003490_684354198272969_1131493672_n.png//
 		label.setBounds(10, 90, 851, 325);
 		panel.add(label);
 	}

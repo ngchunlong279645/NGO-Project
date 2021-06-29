@@ -1,0 +1,6 @@
+Chi Tao  30  Male  012-1234567  Penang, Malaysia  chitao123@gmail.com  Visit To Orpahanage  4.0  100  0%  104.0  
+________
+Alisa  45  Female  013-9056784  Georgetown, Penang  alisaabc1@gmail.com  Seminar: Children Protection  3.0  1000  10%  902.7  
+________
+Li Shan   35  Female  019-12375648  Butterworth  lishan888@gmailcom  Visit To Orpahanage  4.0  500  10%  453.6  
+________

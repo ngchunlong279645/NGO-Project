@@ -1,6 +1,5 @@
 package RacialInjusticePage;
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -68,7 +67,7 @@ public class Event extends JFrame {
 	 * Launch the application.
 	 */
 	public void setData() {
-		File f = new File("D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\EvtInfo.txt");
+		File f = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\EvtInfo.txt
 		try{
 			if(!f.exists()) {
 				f.createNewFile();
@@ -116,7 +115,7 @@ public class Event extends JFrame {
 
 	public Event() {  //constructor with no argument
 		setTitle("Event Description");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));//Icon/SumWithUsicon.png
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029, 664);
 		contentPane = new JPanel();
@@ -132,7 +131,7 @@ public class Event extends JFrame {
 		
 		JLabel lblLogo = new JLabel();//initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = ""; //path to the image
+		path = ""; //path to the image //Icon/SumWithUsiconFull.png
 	    ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -262,7 +261,7 @@ public class Event extends JFrame {
 		panelInfo.add(lblSumWithUs);
 		
 		JLabel lblOrgInfo = new JLabel("04-9814652");
-		lblOrgInfo.setIcon(new ImageIcon(getClass().getResource("")));
+		lblOrgInfo.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-phone-34.png
 		lblOrgInfo.setForeground(new Color(255,180,162)); //Melon: FFB4A2
 		lblOrgInfo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOrgInfo.setFont(new Font("Times New Roman", Font.BOLD, 22));
@@ -270,7 +269,7 @@ public class Event extends JFrame {
 		panelInfo.add(lblOrgInfo);
 		
 		JLabel lblSumwithusfb = new JLabel("SumWithUs@fb.com");
-		lblSumwithusfb.setIcon(new ImageIcon(getClass().getResource("")));
+		lblSumwithusfb.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-facebook-34.png
 		lblSumwithusfb.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSumwithusfb.setForeground(new Color(255, 180, 162));
 		lblSumwithusfb.setFont(new Font("Times New Roman", Font.BOLD, 22));
@@ -362,7 +361,7 @@ public class Event extends JFrame {
 					
 					lblEventPosterA.setBounds(4, 4, 323, 409);				
 					panel.add(lblEventPosterA);
-					path = "/WITHOUT US, WITHOUT COUNTRY/EventA.jpg"; //path to the image
+					path = ""; //path to the image  //WITHOUT US, WITHOUT COUNTRY/EventA.jpg
 					ImageIcon MyImage = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 					Image img = MyImage.getImage(); //converting ImageIcon into Image
 					Image newImg = img.getScaledInstance(lblEventPosterA.getWidth(), lblEventPosterA.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -374,7 +373,7 @@ public class Event extends JFrame {
 		    		
 		    		lblEventPosterB.setBounds(4, 4, 323, 409);				
 					panel.add(lblEventPosterB);
-					path = "/WITHOUT US, WITHOUT COUNTRY/EventB.jpg"; //path to the image
+					path = ""; //path to the image  //WITHOUT US, WITHOUT COUNTRY/EventB.jpg
 					ImageIcon MyImage = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 					Image img = MyImage.getImage(); //converting ImageIcon into Image
 					Image newImg = img.getScaledInstance(lblEventPosterB.getWidth(), lblEventPosterB.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -386,7 +385,7 @@ public class Event extends JFrame {
 		    		
 			    	lblEventPosterC.setBounds(4, 4, 323, 409);				
 					panel.add(lblEventPosterC);
-					path = "/WITHOUT US, WITHOUT COUNTRY/EventC.jpg"; //path to the image
+					path = ""; //path to the image  //WITHOUT US, WITHOUT COUNTRY/EventC.jpg
 					ImageIcon MyImage = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 					Image img = MyImage.getImage(); //converting ImageIcon into Image
 					Image newImg = img.getScaledInstance(lblEventPosterC.getWidth(), lblEventPosterC.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -398,7 +397,7 @@ public class Event extends JFrame {
 					
 				 	lblEventPosterD.setBounds(4, 4, 323, 409);				
 					panel.add(lblEventPosterD);
-					path = "/WITHOUT US, WITHOUT COUNTRY/EventD.jpg"; //path to the image
+					path = ""; //path to the image  //WITHOUT US, WITHOUT COUNTRY/EventD.jpg
 					ImageIcon MyImage = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 					Image img = MyImage.getImage(); //converting ImageIcon into Image
 					Image newImg = img.getScaledInstance(lblEventPosterD.getWidth(), lblEventPosterD.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image

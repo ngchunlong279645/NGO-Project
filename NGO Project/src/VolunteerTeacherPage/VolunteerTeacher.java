@@ -288,7 +288,7 @@ public class VolunteerTeacher extends JFrame {
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					File file = new File("C:\\Users\\Ivy Ng\\Desktop\\java tutorials\\SEM2Assignement3\\src\\teacherList.txt");
+					File file = new File(""); //C:\\Users\\Ivy Ng\\Desktop\\java tutorials\\SEM2Assignement3\\src\\teacherList.txt
 					if(!file.exists()) {
 						file.createNewFile();
 						}

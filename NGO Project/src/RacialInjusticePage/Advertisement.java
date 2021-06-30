@@ -38,7 +38,7 @@ public class Advertisement extends JFrame {
 	 */
 	public static void TextFromFile(JTextPane txtpnHowToJoinLuckyDraw) {
 		try {
-			String path = ""; //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AdvertisementDescription.txt
+			String path = "C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjusticePage\\AdvertisementDescription.txt"; 
 			File file = new File(path);
 			FileReader fr = new FileReader(file);
 			while(fr.read() != -1) {
@@ -72,7 +72,7 @@ public class Advertisement extends JFrame {
 		Font font = new Font("",Font.BOLD,20);
 		
 		setTitle("Advertisement");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));//Icon/SumWithUsicon.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("SumWithUsicon.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029, 664);
 		contentPane = new JPanel();
@@ -113,26 +113,26 @@ public class Advertisement extends JFrame {
 		
 		JLabel lblBlogger = new JLabel();
 		lblBlogger.setBounds(780, 447, 98, 85);
-		lblBlogger.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-blogger-96.png
+		lblBlogger.setIcon(new ImageIcon(getClass().getResource("icons8-blogger-96.png")));
 		lblBlogger.setToolTipText("Official Website: https://www.sumwithus.org/en");
 		panelAd.add(lblBlogger);
 		
 		JLabel lblInsta = new JLabel();
 		lblInsta.setBounds(650, 447, 98, 85);
-		lblInsta.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-instagram-96.png
+		lblInsta.setIcon(new ImageIcon(getClass().getResource("icons8-instagram-96.png"))); 
 		lblInsta.setToolTipText("https://www.instagram.com/sumwithus_NgoRacialOrganization");
 		panelAd.add(lblInsta);
 		
 		JLabel lblFB = new JLabel();
 		lblFB.setBounds(525, 447, 98, 85);
-		lblFB.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-facebook-96 (1).png
+		lblFB.setIcon(new ImageIcon(getClass().getResource("icons8-facebook-96 (1).png")));
 		lblFB.setToolTipText("https://www.facebook.com/sumwithus_NgoRacialOrganization");
 		panelAd.add(lblFB);
 		
 		JLabel lblLuckyDrawWheel = new JLabel("");
 		lblLuckyDrawWheel.setBounds(0, 99, 504, 485);
 		lblLuckyDrawWheel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblLuckyDrawWheel.setIcon(new ImageIcon(getClass().getResource("")));//Icon/LuckyDraw.png
+		lblLuckyDrawWheel.setIcon(new ImageIcon(getClass().getResource("LuckyDraw.png")));
 		panelAd.add(lblLuckyDrawWheel);
 		
 		JLabel lblNewLabel = new JLabel("There are many prizes waiting for you. Don't wait and quickly join our event to join the lucky draw.");

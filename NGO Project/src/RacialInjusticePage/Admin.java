@@ -52,7 +52,7 @@ public class Admin extends JFrame {
 	 * Launch the application.
 	 */
 	public void setData() {
-		File file = new File("");//D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\EvtInfo.txt
+		File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjustice\\EvtInfo.txt");
 		try {
 		if(!file.exists()) {
 			file.createNewFile();
@@ -100,7 +100,7 @@ public class Admin extends JFrame {
 	
 	public Admin() {
 		setTitle("Admin");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("")));//Icon/SumWithUsicon.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("SumWithUsicon.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029, 664);
 		contentPane = new JPanel();
@@ -116,7 +116,7 @@ public class Admin extends JFrame {
 		
 		JLabel lblLogo = new JLabel(); //initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = ""; //path to the image //Icon/SumWithUsiconFull.png
+		path = "SumWithUsiconFull.png"; //path to the image
 		ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -309,7 +309,7 @@ public class Admin extends JFrame {
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try { //export to AboutUs txtFile
-					File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AboutUs.txt
+					File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjusticePage\\AboutUs.txt"); 
 					if(!file.exists()) {
 						file.createNewFile();
 						}
@@ -325,7 +325,7 @@ public class Admin extends JFrame {
 						ex.printStackTrace();
 					}
 				try { //export to AdvertisementDescription txtFile
-					File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\AdvertisementDescription.txt
+					File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjusticePage\\AdvertisementDescription.txt");
 					if(!file.exists()) {
 						file.createNewFile();
 						}

@@ -1,0 +1,15 @@
+ 	 Finance Statement
+---------------------------------
+Total Sponsor   : RM 500.0
+Total Event Fees: RM 1530.0
+Total Donation  : RM 3000
+Total Expenses  : RM 600.0
+=================================
+Total Net Profit: RM 4430.0
+=================================
+
+Note: Event Fees          : RM 30
+      Total Num Participant : 51 participant
+      Advertisement Expenses: RM 500.0
+      Extra Expenses        : RM 100.0
+      Printed at 2021/06/29 12:32:26

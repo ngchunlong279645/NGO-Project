@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -84,7 +85,7 @@ public class AdminPage extends JFrame {
 		panel.add(btnLogout);
 		
 		JLabel lblCompanyIcon = new JLabel("");
-		lblCompanyIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\Logo-Big-removebg-preview.png
+		lblCompanyIcon.setIcon(new ImageIcon(AdminPage.class.getResource("Logo-Big-removebg-preview.png")));
 		lblCompanyIcon.setBounds(142, 97, 141, 149);
 		panel.add(lblCompanyIcon);
 		
@@ -102,12 +103,12 @@ public class AdminPage extends JFrame {
 		panel.add(btnCompany);
 		
 		JLabel lblAdsIcon = new JLabel("");
-		lblAdsIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\advertising-removebg-preview.png
+		lblAdsIcon.setIcon(new ImageIcon(AdminPage.class.getResource("advertising-removebg-preview.png")));
 		lblAdsIcon.setBounds(524, 97, 201, 149);
 		panel.add(lblAdsIcon);
 		
 		JLabel lblFinanceIcon = new JLabel("");
-		lblFinanceIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\finance_1-removebg-preview.png
+		lblFinanceIcon.setIcon(new ImageIcon(AdminPage.class.getResource("finance_1-removebg-preview.png")));
 		lblFinanceIcon.setBounds(501, 303, 224, 149);
 		panel.add(lblFinanceIcon);
 		
@@ -151,7 +152,7 @@ public class AdminPage extends JFrame {
 		panel.add(btnBack);
 		
 		JLabel lblEventIcon = new JLabel("");
-		lblEventIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\event-removebg-preview.png
+		lblEventIcon.setIcon(new ImageIcon(AdminPage.class.getResource("event-removebg-preview.png")));
 		lblEventIcon.setBounds(112, 303, 204, 149);
 		panel.add(lblEventIcon);
 		

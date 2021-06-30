@@ -38,7 +38,7 @@ public class Login extends JFrame {
 	 * Launch the application.
 	 */
     public boolean verifyUser() throws IOException{
-    	File f = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\UserPwdData.txt
+    	File f = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjusticePage\\UserPwdData.txt"); 
     	if(!f.exists()) {
     		f.createNewFile();
     	}
@@ -101,7 +101,7 @@ public class Login extends JFrame {
 		panelSumWithUs.add(lblNewLabel);
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/SumWithUsiconFull.png
+		lblLogo.setIcon(new ImageIcon(getClass().getResource("SumWithUsiconFull.png")));
 		lblLogo.setBounds(60, 94, 320, 309);
 		panelSumWithUs.add(lblLogo);
 
@@ -202,7 +202,7 @@ public class Login extends JFrame {
 				}
 			}
 		});
-		btnLogin.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-user-24.png
+		btnLogin.setIcon(new ImageIcon(getClass().getResource("icons8-user-24.png"))); 
 		btnLogin.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141))); //English Lavender: B5838D
 		btnLogin.setForeground(new Color(181,131,141));
 		btnLogin.setBackground(new Color(255,180,162)); //Melon: FFB4A2
@@ -224,7 +224,7 @@ public class Login extends JFrame {
 				dispose(); // Close the Login.java window
 			}
 		});
-		btnSignUp.setIcon(new ImageIcon(getClass().getResource("")));//Icon/icons8-add-user-male-24.png
+		btnSignUp.setIcon(new ImageIcon(getClass().getResource("icons8-add-user-male-24.png")));
 		btnSignUp.setForeground(new Color(181, 131, 141));
 		btnSignUp.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnSignUp.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141)));
@@ -239,7 +239,7 @@ public class Login extends JFrame {
 				passwordField.setText("");
 			}
 		});
-		btnReset.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-reset-24.png
+		btnReset.setIcon(new ImageIcon(getClass().getResource("icons8-reset-24.png"))); 
 		btnReset.setForeground(new Color(181, 131, 141));
 		btnReset.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnReset.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141)));
@@ -257,7 +257,7 @@ public class Login extends JFrame {
 				}
 			}
 		});
-		btnExit.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-exit-24.png
+		btnExit.setIcon(new ImageIcon(getClass().getResource("icons8-exit-24.png")));
 		btnExit.setForeground(new Color(181, 131, 141));
 		btnExit.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnExit.setBorder(new MatteBorder(2,2,2,2, (Color) new Color (181,131,141)));
@@ -266,13 +266,13 @@ public class Login extends JFrame {
 		panelLogin.add(btnExit);
 		
 		JButton Close = new JButton();
-		Close.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-close-45.png
+		Close.setIcon(new ImageIcon(getClass().getResource("icons8-macos-close-45.png")));
         Close.setToolTipText("Close");
         Close.setBorder(null);
         Close.setBorderPainted(false);
         Close.setContentAreaFilled(false);
         Close.setRequestFocusEnabled(false);
-        Close.setRolloverIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-close-45 (2).png
+        Close.setRolloverIcon(new ImageIcon(getClass().getResource("icons8-macos-close-45 (2).png"))); 
         Close.setVerifyInputWhenFocusTarget(false);
         Close.setBounds(527, 10, 46, 40);
 		panelLogin.add(Close);
@@ -283,7 +283,7 @@ public class Login extends JFrame {
         });
 		 
         JButton Minimize = new JButton();
-        Minimize.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-minimize-45 (1).png
+        Minimize.setIcon(new ImageIcon(getClass().getResource("icons8-macos-minimize-45 (1).png")));
         Minimize.setToolTipText("Minimize");
         Minimize.setBorder(null);
         Minimize.setRequestFocusEnabled(false);
@@ -291,7 +291,7 @@ public class Login extends JFrame {
         Minimize.setBorderPainted(false);
         Minimize.setFocusPainted(false);
         Minimize.setRequestFocusEnabled(false);
-        Minimize.setRolloverIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-macos-minimize-45.png
+        Minimize.setRolloverIcon(new ImageIcon(getClass().getResource("icons8-macos-minimize-45.png")));
         Minimize.setVerifyInputWhenFocusTarget(false);
         Minimize.setBounds(469, 10, 46, 40);
         panelLogin.add(Minimize);

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -84,7 +85,7 @@ public class Home extends JFrame {
 		panel.add(btnExit);
 		
 		JLabel lblCompanyIcon = new JLabel("");
-		lblCompanyIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\Logo-Big-removebg-preview.png
+		lblCompanyIcon.setIcon(new ImageIcon(Home.class.getResource("Logo-Big-removebg-preview.png")));
 		lblCompanyIcon.setBounds(142, 97, 141, 149);
 		panel.add(lblCompanyIcon);
 		
@@ -102,7 +103,7 @@ public class Home extends JFrame {
 		panel.add(btnCompany);
 		
 		JLabel lblParticipantIcon = new JLabel("");
-		lblParticipantIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\participant-removebg-preview.png
+		lblParticipantIcon.setIcon(new ImageIcon(Home.class.getResource("participant-removebg-preview.png"))); 
 		lblParticipantIcon.setBounds(322, 313, 189, 149);
 		panel.add(lblParticipantIcon);
 		
@@ -120,7 +121,7 @@ public class Home extends JFrame {
 		panel.add(btnRegister);
 		
 		JLabel lblEventIcon = new JLabel("");
-		lblEventIcon.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\event-removebg-preview.png
+		lblEventIcon.setIcon(new ImageIcon(Home.class.getResource("event-removebg-preview.png")));
 		lblEventIcon.setBounds(511, 97, 224, 149);
 		panel.add(lblEventIcon);
 		

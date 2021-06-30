@@ -15,6 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
+
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -103,7 +105,7 @@ public class CompanyBackground extends JFrame {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(21, 10, 151, 169);
 		panel_1_1.add(lblNewLabel);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\Logo-Big-removebg-preview.png"));
+		lblNewLabel.setIcon((new ImageIcon(CompanyBackground.class.getResource("Logo-Big-removebg-preview.png"))));
 		
 		JLabel lblName = new JLabel("Organization Name");
 		lblName.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));

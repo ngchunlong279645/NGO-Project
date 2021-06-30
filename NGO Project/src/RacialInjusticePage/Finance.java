@@ -76,7 +76,7 @@ public class Finance extends JFrame {
 	
 	public Finance() { //constructor with no argument
 		setTitle("Finance");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); //Icon/SumWithUsicon.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("SumWithUsicon.png"))); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100,  1029, 664);
 		contentPane = new JPanel();
@@ -92,7 +92,7 @@ public class Finance extends JFrame {
 		
 		JLabel lblLogo = new JLabel(); //initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = ""; //path to the image  //Icon/SumWithUsiconFull.png
+		path = "SumWithUsiconFull.png"; //path to the image 
 		ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
@@ -317,7 +317,7 @@ public class Finance extends JFrame {
 		panelFinance_1.add(totalNumParticipant);
 		
 		JButton btnReset = new JButton("Reset");
-		btnReset.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-reset-45.png
+		btnReset.setIcon(new ImageIcon(getClass().getResource("icons8-reset-45.png")));
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				adExpenses.setText("");
@@ -336,11 +336,11 @@ public class Finance extends JFrame {
 		panelFinancial.add(btnReset);
 		
 		JButton btnPrint = new JButton("Print"); //PrintStatement to FinanceReporttxtFile
-		btnPrint.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-print-45 (1).png
+		btnPrint.setIcon(new ImageIcon(getClass().getResource("icons8-print-45 (1).png")));
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try { //export to FinanceReport txtFile
-					File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Admin_UpdateDescription\\FinanceReport.txt
+					File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjusticePage\\FinanceReport.txt");
 					if(!file.exists()) {
 						file.createNewFile();
 						}
@@ -467,7 +467,7 @@ public class Finance extends JFrame {
 			    netProfitText.setText(totalNetProfitTxt);
 			}
 		});
-		btnCalculateNetProfit.setIcon(new ImageIcon("")); //C:\\Users\\Win10Pro\\Downloads\\icons8-calculator-35.png
+		btnCalculateNetProfit.setIcon(new ImageIcon("icons8-calculator-35.png")); 
 		btnCalculateNetProfit.setForeground(new Color(204,102,153));
 		btnCalculateNetProfit.setFont(new Font("Sitka Banner", Font.BOLD, 25));
 		btnCalculateNetProfit.setBounds(10, 295, 171, 46);

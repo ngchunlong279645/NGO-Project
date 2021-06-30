@@ -48,7 +48,7 @@ public class Login extends JFrame {
 	 */
 	public Login() {
 		setForeground(Color.BLUE);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\Logo-Big-removebg-preview.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("Logo-Big-removebg-preview.png")));
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 935, 634);

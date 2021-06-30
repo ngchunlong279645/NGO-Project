@@ -158,12 +158,12 @@ public class Login extends JFrame {
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Login.class.getResource("")));//IMAGE/SOL24.PNG
+		lblNewLabel.setIcon(new ImageIcon(Login.class.getResource("SOL24.PNG")));
 		lblNewLabel.setBounds(78, 24, 159, 178);
 		panel_1.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("")));//IMAGE/Capture.PNG
+		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("Capture.PNG")));
 		lblNewLabel_1.setBounds(0, 223, 391, 252);
 		panel_1.add(lblNewLabel_1);
 		

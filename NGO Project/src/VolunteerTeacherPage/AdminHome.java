@@ -140,7 +140,7 @@ public class AdminHome extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		financeBtn.setIcon(new ImageIcon(AdminHome.class.getResource("")));//IMAGE/coin-us-dollar-icon.png
+		financeBtn.setIcon(new ImageIcon(AdminHome.class.getResource("coin-us-dollar-icon.png")));
 		financeBtn.setBounds(337, 86, 96, 96);
 		panel.add(financeBtn);
 		
@@ -159,7 +159,7 @@ public class AdminHome extends JFrame {
 				
 			}
 		});
-		button_1.setIcon(new ImageIcon(AdminHome.class.getResource("")));//IMAGE/megaphone-2-icon.png
+		button_1.setIcon(new ImageIcon(AdminHome.class.getResource("megaphone-2-icon.png")));
 		button_1.setBounds(571, 86, 96, 96);
 		panel.add(button_1);
 		
@@ -182,7 +182,7 @@ public class AdminHome extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		button_2.setIcon(new ImageIcon(AdminHome.class.getResource("")));//IMAGE/calendar-icon.png
+		button_2.setIcon(new ImageIcon(AdminHome.class.getResource("calendar-icon.png")));
 		button_2.setBounds(337, 300, 96, 96);
 		panel.add(button_2);
 		
@@ -193,7 +193,7 @@ public class AdminHome extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		button_3.setIcon(new ImageIcon(AdminHome.class.getResource("")));//IMAGE/solicon.PNG
+		button_3.setIcon(new ImageIcon(AdminHome.class.getResource("solicon.PNG")));
 		button_3.setBounds(571, 300, 96, 96);
 		panel.add(button_3);
 		

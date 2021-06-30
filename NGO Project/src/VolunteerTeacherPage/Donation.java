@@ -215,7 +215,7 @@ public class Donation extends JFrame {
 		panel.add(btnNewButton);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Donation.class.getResource("")));//IMAGE/header_NGOhub-Campaign-Header.jpg
+		label.setIcon(new ImageIcon(Donation.class.getResource("header_NGOhub-Campaign-Header.jpg")));
 		label.setBounds(188, 0, 640, 434);
 		panel.add(label);
 	}

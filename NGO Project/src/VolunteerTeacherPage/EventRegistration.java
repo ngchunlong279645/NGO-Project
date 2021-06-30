@@ -1,4 +1,5 @@
 package VolunteerTeacherPage;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -282,7 +283,7 @@ public class EventRegistration extends JFrame {
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					File file = new File("");//C:\\Users\\Ivy Ng\\Desktop\\java tutorials\\SEM2Assignement3\\src\\eventRegisterList.txt
+					File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\VolunteerTeacherPage\\eventRegisterList.txt");
 					if(!file.exists()) {
 						file.createNewFile();
 						}

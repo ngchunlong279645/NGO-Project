@@ -225,7 +225,7 @@ public class ParticipantRegistration extends JFrame {
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					File file = new File("");//C:\\Users\\chyim\\OneDrive\\Desktop\\STIA1123 P2\\Assignment 3\\ParticipantReg.txt
+					File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\ChildrensWelfare\\ParticipantReg.txt");
 					if(!file.exists()) {
 						file.createNewFile();
 						}

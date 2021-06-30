@@ -40,7 +40,7 @@ public class SignUp extends JFrame {
 	 * Launch the application.
 	 */
 	public void setData() {
-			File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\UserPwdData.txt
+			File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\VolunteerTeacherPage\\UserPwdData.txt"); 
 			try {
 			if(!file.exists()) {
 				file.createNewFile();
@@ -85,7 +85,7 @@ public class SignUp extends JFrame {
 	 */
 	public SignUp() { //constructor with no argument
 		setTitle("First Time User Sign Up");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); //Icon/SumWithUsicon.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("SumWithUsicon.png"))); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 559, 618);
 		contentPane = new JPanel();
@@ -120,13 +120,13 @@ public class SignUp extends JFrame {
 		panel.add(lblItsFree);
 		
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-user-36.png
+		lblUsername.setIcon(new ImageIcon(getClass().getResource("icons8-user-36.png")));
 		lblUsername.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		lblUsername.setBounds(33, 128, 149, 38);
 		panel.add(lblUsername);
 
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-password-36.png
+		lblPassword.setIcon(new ImageIcon(getClass().getResource("icons8-password-36.png"))); 
 		lblPassword.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		lblPassword.setBounds(33, 209, 149, 38);
 		panel.add(lblPassword);
@@ -203,7 +203,7 @@ public class SignUp extends JFrame {
 		
 		JButton btnBack = new JButton("Back");
 		btnBack.setHorizontalAlignment(SwingConstants.LEFT);
-		btnBack.setIcon(new ImageIcon(getClass().getResource(""))); //Icon/icons8-back-45.png
+		btnBack.setIcon(new ImageIcon(getClass().getResource("icons8-back-45.png")));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login l = new Login();

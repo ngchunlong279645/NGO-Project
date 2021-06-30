@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -105,7 +107,8 @@ public class Mainpage extends JFrame {
 		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblNewLabel.setBounds(309, 142, 331, 286);
 		panel.add(lblNewLabel);
-		lblNewLabel.setIcon(new ImageIcon("")); //C:\\Users\\chyim\\OneDrive\\Pictures\\Au Chyi Min\\main logo.png
+		Image image = new ImageIcon(this.getClass().getResource("main logo.png")).getImage();
+		lblNewLabel.setIcon(new ImageIcon(image)); 
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(new ActionListener() {

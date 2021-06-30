@@ -52,7 +52,7 @@ public class Participant extends JFrame {
 	 */
 	public void setData() {
 		try {
-			File file = new File(""); //D:\\LeeJieHui279096\\STIA1123_Programming_A202(I)\\Assignment3\\GUI_NGO Racial Injusctice\\TextFileAss3\\Participant_RegistrationSystem.txt
+			File file = new File("C:\\Users\\lzw_1\\eclipse-workspace\\Project\\src\\RacialInjusticePage\\Participant_RegistrationSystem.txt"); 
 			if(!file.exists()) {
 				file.createNewFile();
 				}
@@ -98,7 +98,7 @@ public class Participant extends JFrame {
 	
 	public Participant() { //constructor with no argument
 		setTitle("RegistrationEvent");  
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); //Icon/SumWithUsicon.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("SumWithUsicon.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100,1184, 664);
 		contentPane = new JPanel();
@@ -114,7 +114,7 @@ public class Participant extends JFrame {
 		
 		JLabel lblLogo = new JLabel(); //initialization of JLabel 
 		lblLogo.setBounds(37, 10, 105, 95);
-		path = ""; //path to the image  //Icon/SumWithUsiconFull.png
+		path = "SumWithUsiconFull.png"; //path to the image
 		ImageIcon MyImg = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 		Image i = MyImg.getImage(); //converting ImageIcon into Image
 		Image newImage = i.getScaledInstance(lblLogo.getWidth(), lblLogo.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image

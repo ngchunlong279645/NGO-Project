@@ -1,0 +1,12 @@
+1  B  Lee Jie Hui  22  Female  Chinese  Penang  Malaysian  lee_jie_hui@soc.uum.edu.my  0133343138  50.00  
+_______________________________________________________________________________
+2  B  Lee Jian Wei  28  Male  Chinese  Melaka  Foreigner  jianwei23@hotmail.com  0156738292   30.00  
+_______________________________________________________________________________
+3  A  Lim Jia Huei  24  Female  Chinese  Perak  Malaysian  jiahuei14@hotmail.com  0109516862  45.00  
+_______________________________________________________________________________
+4  C  Tan Jing Wei  26  Female  Chinese  Kelantan  Malaysian  jingwei23@gmail.com  0134627982  60.00  
+_______________________________________________________________________________
+5  C  Nabilah  29  Female  Malay  Selangor  Malaysian  nabilah03@gmail.com  013678237  80.00  
+_______________________________________________________________________________
+6  D  Intan Suraya  34  Female  Indian  Pahang  Malaysian  surayaintan72@gmail.com  0195672498  48.00  
+_______________________________________________________________________________

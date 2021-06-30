@@ -61,7 +61,7 @@ public class Donation extends JFrame {
 	
 	public Donation() {
 		setTitle("Donation");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(""))); ///Icon/SumWithUsicon.png
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("SumWithUsicon.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1029,590);
 		contentPane = new JPanel();
@@ -209,7 +209,7 @@ public class Donation extends JFrame {
 				
 				JLabel lblCreditDebitCard = new JLabel(); //initialization of JLabel 
 				lblCreditDebitCard.setBounds(35, 25, 409, 302);
-				path = "/Icon/creditCard.png"; //path to the image
+				path = "creditCard.png"; //path to the image
 				ImageIcon MyImage = new ImageIcon(getClass().getResource(path)); //set the path to the MyImage
 				Image img = MyImage.getImage(); //converting ImageIcon into Image	
 				Image newImg = img.getScaledInstance(lblCreditDebitCard.getWidth(), lblCreditDebitCard.getHeight(), Image.SCALE_SMOOTH); //then scaling of this image
